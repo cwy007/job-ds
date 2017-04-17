@@ -1,6 +1,7 @@
 class Admin::JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-
+  before_action :require_is_admin
+  
   def index
     @jobs = Job.all.recent
   end
@@ -42,6 +43,13 @@ class Admin::JobsController < ApplicationController
   end
 
   private
+
+  def require_is_admin
+    if current_user.email != "chanweiyan007@gmail.com"
+      flash[:warning] = "You have no permission!"
+      redirect_to root_path
+    end
+  end
 
   def job_params
     params.require(:job).permit(:title, :description)
