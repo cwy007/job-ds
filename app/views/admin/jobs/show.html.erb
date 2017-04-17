@@ -1,0 +1,8 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h1><%= @job.title %></h1>
+    <p><%= simple_format(@job.description) %></p>
+
+    <%= link_to "Back", admin_jobs_path, class: "btn btn-primary" %>
+  </div>
+</div>

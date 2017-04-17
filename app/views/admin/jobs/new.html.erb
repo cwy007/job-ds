@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h1 class="text-center">新增一个职缺</h1>
+
+    <%= simple_form_for [:admin,@job] do |f| %>
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.submit "Submit" %>
+    <% end %>
+    <br/>
+    <%= link_to "Back", jobs_path, class: "btn btn-primary" %>
+  </div>
+</div>
