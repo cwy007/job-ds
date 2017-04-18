@@ -26,7 +26,7 @@ class ResumesController < ApplicationController
   def update
     @job = Job.find(params[:job_id])
     @resume = Resume.find(params[:id])
-    if @resume.save(resume_params)
+    if @resume.update(resume_params)
       redirect_to job_path(@job), notice: "Resume was updated successfully!"
     else
       render :edit

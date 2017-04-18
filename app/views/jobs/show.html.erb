@@ -18,7 +18,7 @@
             </div>
           </div>
           <div class="panel-body">
-            <%= resume.content %>
+            <%= simple_format(resume.content) %>
             <hr>
             <% if resume.attachment.present? %>
               <i class="fa fa-paperclip " aria-hidden="true"></i>
