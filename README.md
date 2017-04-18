@@ -20,4 +20,11 @@
   增加栏位到jobs（wage_lower_bound, wage_upper_bound, contact_email)
     限制：wage不得为空，最低工资大于0；
 
-3.
+3.优化index view页面
+  区分admin页面，加个sidebar
+   user可以在首页
+     按照工资下限排序
+     按照工资上限排序
+     按照发表时间排序
+  user可以上传简历
+  admin页面可以查看每个job中的简历
