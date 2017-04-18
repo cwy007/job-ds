@@ -6,6 +6,11 @@ class ResumesController < ApplicationController
     @resume = Resume.new
   end
 
+  def edit
+    @job = Job.find(params[:job_id])
+    @resume = Resume.find(params[:id])
+  end
+
   def create
     @job = Job.find(params[:job_id])
     @resume = Resume.new(resume_params)
@@ -15,6 +20,16 @@ class ResumesController < ApplicationController
       redirect_to jobs_path, notice: "Resume was submitted successfully!"
     else
       render :new
+    end
+  end
+
+  def update
+    @job = Job.find(params[:job_id])
+    @resume = Resume.find(params[:id])
+    if @resume.save(resume_params)
+      redirect_to job_path(@job), notice: "Resume was updated successfully!"
+    else
+      render :edit
     end
   end
 

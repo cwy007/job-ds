@@ -26,8 +26,8 @@
             <% else %>
               No attachment
             <% end %>
-            <%= link_to "Delete", job_resume_path(@job),  class: "btn btn-danger btn-xs pull-right", method: :delete%>
-            <%= link_to "Edit", edit_job_resume_path(@job),  class: "btn btn-success btn-xs pull-right" %>
+            <%= link_to "Delete", job_resume_path(resume.job, resume),  class: "btn btn-danger btn-xs pull-right", method: :delete%>
+            <%= link_to "Edit", edit_job_resume_path(resume.job, resume),  class: "btn btn-success btn-xs pull-right" %>
           </div>
         <% end %>
       </div>
