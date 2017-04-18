@@ -17,4 +17,7 @@
   一般用户只能看到公开的@jobs = Job.where(:is_hidden => false)
   实作hide/publish按钮
   讲job_status用图片表示 gem ‘font-awesome-rails’
-  
+  增加栏位到jobs（wage_lower_bound, wage_upper_bound, contact_email)
+    限制：wage不得为空，最低工资大于0；
+
+3.
