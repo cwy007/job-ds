@@ -5,7 +5,11 @@
 <table class="table table-hover">
   <thead>
     <tr>
+      <td>状态</td>
       <td>职缺</td>
+      <td>工资下限</td>
+      <td>工资上限</td>
+      <td>管理选项</td>
       <td>发布时间</td>
     </tr>
   </thead>
@@ -14,9 +18,16 @@
       <tr>
         <td>
           <%= render_job_status(job) %>
+        </td>
+        <td>
           <%= link_to job.title, admin_job_path(job) %>
         </td>
-        <td><%= job.created_at %></td>
+        <td>
+          <%= job.wage_lower_bound %>
+        </td>
+        <td>
+          <%= job.wage_upper_bound %>
+        </td>
         <td>
           <% if job.is_hidden %>
             <%= link_to "Publish", publish_admin_job_path(job), method: :post, class: "btn btn-sm btn-default" %>
@@ -29,6 +40,10 @@
           <%= link_to "Delete", admin_job_path(job), class: "btn btn-sm btn-default",
                      method: :delete, data: { confirm: "Are you sure?"} %>
         </td>
+        <td>
+          <%= job.created_at %>
+        </td>
+
       </tr>
     <% end %>
   </tbody>
