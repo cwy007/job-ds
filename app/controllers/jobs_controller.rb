@@ -14,9 +14,7 @@ class JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
-    @resumes = @job.resumes
-
-
+    @resumes = @job.resumes.order('created_at DESC')
   end
 
   def new

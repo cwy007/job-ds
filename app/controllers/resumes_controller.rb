@@ -17,7 +17,7 @@ class ResumesController < ApplicationController
     @resume.job = @job
     @resume.user = current_user
     if @resume.save
-      redirect_to jobs_path, notice: "Resume was submitted successfully!"
+      redirect_to job_path(@job), notice: "Resume was submitted successfully!"
     else
       render :new
     end
@@ -31,6 +31,13 @@ class ResumesController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @job = Job.find(params[:job_id])
+    @resume = Resume.find(params[:id])
+    @resume.destroy
+    redirect_to job_path(@job), alert: "Resume was deletd!"
   end
 
   private
