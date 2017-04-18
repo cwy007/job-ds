@@ -20,6 +20,7 @@ class Admin::JobsController < ApplicationController
 
   def create
     @job = Job.new(job_params)
+    @job.user = current_user
     if @job.save
       redirect_to admin_jobs_path, notice: "Job was created successfully!"
     else
@@ -45,13 +46,13 @@ class Admin::JobsController < ApplicationController
   def hide
     @job = Job.find(params[:id])
     @job.hide!
-    redirect_to :back
+    redirect_to admin_jobs_path
   end
 
   def publish
     @job = Job.find(params[:id])
     @job.publish!
-    redirect_to :back
+    redirect_to admin_jobs_path
   end
 
 
