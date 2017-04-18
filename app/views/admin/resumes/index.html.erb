@@ -1,7 +1,10 @@
 <h1 class="text-center">投递到 - <%= @job.title %> - 的简历</h1>
 
 <hr/>
-<% @resumes.each do |resume| %>
+
+
+<%= render partial: "resumes", collection: @resumes, as: :resume %>
+<!-- <% @resumes.each do |resume| %>
 <div class="panel panel-default">
     <div class="panel-heading">
       <%= resume.user.email %>
@@ -16,5 +19,5 @@
         No attachment
       <% end %>
     </div>
-</div>
-<% end %>
+  <% end %>
+</div> -->
