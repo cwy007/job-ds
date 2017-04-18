@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-8 col-md-offset-2">
     <h1><%= @job.title %></h1>
     <p><%= simple_format(@job.description) %></p>
 
@@ -7,5 +7,31 @@
     <p class="text-center" style="font-size: 30px; text-decoration: underline;">
       <%= link_to "提交简历", new_job_resume_path(@job) %>
     </p>
+
+    <hr>
+    <% @resumes.each do |resume| %>
+      <div class="panel panel-info">
+        <% if resume.user = current_user %>
+          <div class="panel-heading">
+            <div class="panel-title">
+              <p><%= resume.user.email %></p>
+            </div>
+          </div>
+          <div class="panel-body">
+            <%= resume.content %>
+            <hr>
+            <% if resume.attachment.present? %>
+              <i class="fa fa-paperclip " aria-hidden="true"></i>
+              <%= link_to "Download Resume", resume.attachment_url %>
+            <% else %>
+              No attachment
+            <% end %>
+            <%= link_to "Delete", job_resume_path(@job),  class: "btn btn-danger btn-xs pull-right", method: :delete%>
+            <%= link_to "Edit", edit_job_resume_path(@job),  class: "btn btn-success btn-xs pull-right" %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+
   </div>
 </div>
