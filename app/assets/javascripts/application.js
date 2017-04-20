@@ -15,3 +15,8 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+
+// -------tooltip js for favorite icon -----
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})

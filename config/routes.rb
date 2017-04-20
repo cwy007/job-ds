@@ -10,9 +10,13 @@ Rails.application.routes.draw do
         post :publish
         post :hide
       end
-      resources :resumes
+      resources :resumes do
+        member do
+          post :favorite
+          post :unfavorite
+        end
+      end
     end
-    resources :resumes
   end
 
   root 'jobs#index'

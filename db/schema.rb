@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170418072350) do
+ActiveRecord::Schema.define(version: 20170420020732) do
 
   create_table "jobs", force: :cascade do |t|
     t.string   "title"
@@ -28,9 +28,10 @@ ActiveRecord::Schema.define(version: 20170418072350) do
     t.text     "content"
     t.integer  "user_id"
     t.integer  "job_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.string   "attachment"
+    t.boolean  "favorite",   default: false
   end
 
   create_table "users", force: :cascade do |t|

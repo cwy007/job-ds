@@ -7,4 +7,19 @@ class Admin::ResumesController < ApplicationController
     @job = Job.find(params[:job_id])
     @resumes = @job.resumes
   end
+
+  def favorite
+    @resume = Resume.find(params[:id])
+    @resume.favorite = true
+    @resume.save
+    redirect_to :back
+  end
+
+  def unfavorite
+    @resume = Resume.find(params[:id])
+    @resume.favorite = false
+    @resume.save
+    redirect_to :back
+  end
+
 end
