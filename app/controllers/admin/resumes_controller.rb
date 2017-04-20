@@ -8,6 +8,10 @@ class Admin::ResumesController < ApplicationController
     @resumes = @job.resumes
   end
 
+  def favos
+    @resumes = Resume.where(:favorite => true)
+  end
+
   def favorite
     @resume = Resume.find(params[:id])
     @resume.favorite = true

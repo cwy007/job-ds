@@ -1,0 +1,27 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <%= resume.user.email %> 投递简历到
+    <!-- <span class="text-center"> -->
+      <%= link_to resume.job.title, admin_job_resumes_path(resume.job), class: "pull-center" %>
+    <!-- </span> -->
+    <% if resume.favorite %>
+      <span data-toggle="tooltip" data-placement="left" title="取消收藏" class="pull-right" style= "color:green; text-decoration: none;" >
+        <%= link_to "", unfavorite_admin_job_resume_path(resume.job,resume), method: :post, class: "fa fa-bookmark fa-2x" %>
+      </span>
+    <% else %>
+      <span data-toggle="tooltip" data-placement="left" title="收藏这个简历" class="pull-right" style= "color:green;" >
+        <%= link_to "", favorite_admin_job_resume_path(resume.job,resume), method: :post, class: "fa fa-bookmark-o fa-2x" %>
+      </span>
+    <% end %>
+  </div>
+  <div class="panel-body">
+    <%= simple_format(resume.content) %>
+      <hr/>
+      <% if resume.attachment.present? %>
+      <i class="fa fa-paperclip"></i>
+      <%= link_to "Download Resume", resume.attachment_url %>
+    <% else %>
+      No attachment
+    <% end %>
+  </div>
+</div>
