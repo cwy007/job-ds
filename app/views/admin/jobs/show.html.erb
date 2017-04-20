@@ -1,8 +1,25 @@
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <h1><%= @job.title %></h1>
+  <div class="col-md-10 col-md-offset-1 ">
+    <h1 class="text-center">
+      <%= @job.title %>
+    </h1>
+    <p>
+      <%= link_to "收到的简历 -->", admin_job_resumes_path(@job), class: "pull-right", style: "text-decoration:underline;"%>
+    </p>
+
+    <!-- <tbody>
+      <tr>
+        <td>
+          <%= link_to "收到的简历", admin_job_resumes_path(@job), class: "pull-right"%>
+        </td>
+        <td>
+          <%= link_to "收到的简历", admin_job_resumes_path(@job), class: "pull-right"%>
+        </td>
+      </tr>
+    </tbody> -->
+    <!-- <%= link_to "收到的简历", admin_job_resumes_path(@job), class: "pull-right"%> -->
+
     <p><%= simple_format(@job.description) %></p>
 
-    <%= link_to "Back", admin_jobs_path, class: "btn btn-primary" %>
   </div>
 </div>
