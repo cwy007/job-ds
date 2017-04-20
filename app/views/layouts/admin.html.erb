@@ -1,34 +1,40 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>JobListing</title>
+    <title>真·24K Offer</title>
     <%= csrf_meta_tags %>
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="shortcut icon" href="/images/favicon.ico">
   </head>
   <body>
     <div class="container-fluid">
       <div class="row">
         <%= render "common/navbar" %>
-        <%= render "common/flashes" %>
 
-        <div class="col-sm-2">
-          <ul class="nav nav-pills nav-stacked">
-            <li class="active " style="max-width: 300px; margin-top: 30px;">
-              <%= link_to "管理员页面", admin_jobs_path %>
-            </li>
-            <li>
-              <%= link_to "收藏的简历", admin_resumes_favos_path%>
-            </li>
-            <li>
-              <%= link_to "工作列表", jobs_path %>
-            </li>
-          </ul>
+        <div class="col-sm-10 col-sm-offset-1">
+          <%= render "common/flashes" %>
+          <div class="row">
+            <div class="col-sm-2">
+              <ul class="nav nav-pills nav-stacked">
+                <li class="active " style="max-width: 300px; margin-top: 30px;">
+                  <%= link_to "管理员页面", admin_jobs_path %>
+                </li>
+                <li>
+                  <%= link_to "收藏的简历", admin_resumes_favos_path%>
+                </li>
+                <li>
+                  <%= link_to "工作列表", jobs_path %>
+                </li>
+              </ul>
+            </div>
+            <!-- <div class="clearfix"></div> -->
+            <div class="col-sm-10 ">
+              <%= yield %>
+            </div>
+          </div>
         </div>
-        <div class="col-sm-10">
-          <%= yield %>
-        </div>
-
       </div>
     </div>
     <%= render "common/footer" %>

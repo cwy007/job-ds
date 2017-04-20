@@ -1,9 +1,7 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <%= resume.user.email %> 投递简历到
-    <!-- <span class="text-center"> -->
-      <%= link_to resume.job.title, admin_job_resumes_path(resume.job), class: "pull-center" %>
-    <!-- </span> -->
+    <%= link_to resume.job.title, admin_job_resumes_path(resume.job), class: "pull-center" %>
     <% if resume.favorite %>
       <span data-toggle="tooltip" data-placement="left" title="取消收藏" class="pull-right" style= "color:green; text-decoration: none;" >
         <%= link_to "", unfavorite_admin_job_resume_path(resume.job,resume), method: :post, class: "fa fa-bookmark fa-2x" %>

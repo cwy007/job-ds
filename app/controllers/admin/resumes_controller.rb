@@ -16,6 +16,7 @@ class Admin::ResumesController < ApplicationController
     @resume = Resume.find(params[:id])
     @resume.favorite = true
     @resume.save
+    flash[:notice] = "收藏成功"
     redirect_to :back
   end
 
@@ -23,6 +24,7 @@ class Admin::ResumesController < ApplicationController
     @resume = Resume.find(params[:id])
     @resume.favorite = false
     @resume.save
+    flash[:alert] = "你已取消收藏！"
     redirect_to :back
   end
 
