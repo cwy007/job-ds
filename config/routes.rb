@@ -19,6 +19,5 @@ Rails.application.routes.draw do
     end
   end
   get '/admin/resumes/favos/', to: 'admin/resumes#favos'
-
-  root 'jobs#index'
+  root 'welcome#index'
 end
