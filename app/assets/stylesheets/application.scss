@@ -17,7 +17,22 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "font-awesome";
+ //----background-color------
+ body {
+   background-color: #f2f2f5;
+ }
+//----application layout---
+ div.jobsLayout {
+   background-color: #ffffff;
+ }
+//---admin layout----
+ div.container-fluid .col-sm-offset-1 .col-sm-2 {
+   background-color: #f8f9fb;
+ }
 
+ div.container-fluid .col-sm-offset-1 .col-sm-10 {
+   background-color: #ffffff;
+ }
 // -------box-------
  .jumbotron {
    background-image:url('http://fullstack-public.oss-cn-qingdao.aliyuncs.com/2017-04-15-542213.png');
