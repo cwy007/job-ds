@@ -35,18 +35,18 @@
  }
 // -------box-------
  .jumbotron {
-   background-image:url('http://fullstack-public.oss-cn-qingdao.aliyuncs.com/2017-04-15-542213.png');
+  //  background-image:url('http://fullstack-public.oss-cn-qingdao.aliyuncs.com/2017-04-15-542213.png');
+  // background-image: url(welcome.png);
+   background-image: url(up.png);
    background-repeat: no-repeat;
    background-size: cover;
+   background-position: center;
    padding-bottom: 110px;
+   margin-top: 0;
+  //  border: solid red 3px;
  }
 
- // .title {
- //   font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
- //   text-align: center;
- //   margin-top: 200px;
- //   margin-bottom: 80px;
- // }
+
 
  .slogan {
    margin-top: 10px;
@@ -91,69 +91,60 @@
   // transition: 0.5s;
 }
 
-//----refine navbar------
- .navbar-default {
-     background-color: #212121;  //背景颜色
+ //----Style The Navbar------
+ .navbar {
+    margin-bottom: 0;
+    background-color: #283e4a;
+    border: 0;
+    // font-size: 11px !important;
+    // letter-spacing: 4px;
+    opacity:0.9;
+}
 
-     border-color: #212121; //边框色
-
-     margin-bottom: 0; //底部 margin 不撑开距离
- }
-
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
    .navbar {
      border-radius: 0; //圆角为0
    }
  }
 
-  .navbar-default .navbar-brand {
-   color: #EF6C00; //字体颜色
+ /* Add a gray color to all navbar links */
+.navbar li a, .navbar .navbar-brand {
+    color: #c5cfd6 !important;
+}
 
-   padding: 10px 15px; //上下10px，左右15px
-   line-height: 30px; //文字行高
- }
+/* On hover, the links will turn white */
+.navbar-nav li a:hover,
+.navbar .navbar-brand:hover{
+    color: #fff !important;
+}
 
- .navbar-default .navbar-brand:hover,
- .navbar-default .navbar-brand:focus {
-   color: #FF6F00; //鼠标放置在链接上的文字颜色
+/* Dropdown links */
+.dropdown-menu li a {
+    color: #000 !important;
+}
 
-   background-color: transparent; //鼠标放置在链接上的背景颜色，这里设为透明
- }
-//-----navbar-color----
-.navbar-default .navbar-nav > li > a{
-   color: #EF6C00;
+/* On hover, the dropdown links will turn red */
+.dropdown-menu li a:hover {
+    // color: #000;
+    background-color: #283e4a !important;
+}
 
- }
+/* The active link */
+// .navbar-nav li.active a {
+//     color: #fff !important;
+//     background-color:#29292c !important;
+// }
 
- .navbar-default .navbar-nav > li > a:hover,
- .navbar-default .navbar-nav > li > a:focus {
-   color: #FF6F00;
+/* Remove border color from the collapsible button */
+// .navbar-default .navbar-toggle {
+//     border-color: transparent;
+// }
 
-   background-color: transparent;
- }
- .navbar-default .navbar-nav > .active > a,
- .navbar-default .navbar-nav > .active > a:hover,
- .navbar-default .navbar-nav > .active > a:focus {
-   color: #FF6F00;
-
-   background-color: #FFE0B2;
-
- }
-
- .navbar-default .navbar-nav > .open > a,
- .navbar-default .navbar-nav > .open > a:focus,
- .navbar-default .navbar-nav > .open > a:hover {
-   background-color: #FFE0B2;
-
-   color: #212121;
-
- }
-  .navbar-brand > img {
-      display: inline-block; //图片和链接文字显示在同一行
-      margin-right: 10px; //图片和链接文字拉开一点距离
-      width: 32px; //定制图片宽度
-      height: 32px; //定制图片高度
-  }
+/* Dropdown */
+.open .dropdown-toggle {
+    color:  #fff !important;
+    background-color:  #283e4a !important;
+}
 
 //-----edit lag-picture-------
   .container-fluid .jumbotron{
