@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Job in China</title>
+    <title>Jobs in China</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,12 +9,14 @@
     <link rel="shortcut icon" href="/images/favicon.ico">
   </head>
 
-  <body>
+  <body id="myPage">
     <div class="container-fluid">
       <div class="row">
         <%= render "common/navbar" %>
         <%= render "common/flashes" %>
-        <%= yield %>
+        <div class="welcome-layout">
+          <%= yield %>
+        </div>
       </div>
     </div>
 
