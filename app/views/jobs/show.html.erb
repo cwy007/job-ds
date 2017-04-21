@@ -1,9 +1,9 @@
 <div class="row">
-  <div class="col-md-8 col-md-offset-2">
+  <div class="col-md-10 col-md-offset-1">
     <h1><%= @job.title %></h1>
-    <p><%= simple_format(@job.description) %></p>
+    <%= link_to "职位列表 -->", jobs_path, class: "pull-right" %>
+    <%= simple_format(@job.description) %>
 
-    <%= link_to "Back", jobs_path, class: "btn btn-primary" %>
     <p class="text-center" style="font-size: 30px; text-decoration: underline;">
       <%= link_to "提交简历", new_job_resume_path(@job) %>
     </p>

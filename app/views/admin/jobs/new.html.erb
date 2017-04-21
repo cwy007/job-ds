@@ -3,15 +3,13 @@
     <h1 class="text-center">新增一个职缺</h1>
 
     <%= simple_form_for [:admin,@job] do |f| %>
-      <%= f.input :title %>
-      <%= f.input :description %>
-      <%= f.input :wage_lower_bound %>
-      <%= f.input :wage_upper_bound %>
-      <%= f.input :contact_email %>
-      <%= f.input :is_hidden %>
-      <%= f.submit "Submit" %>
+      <%= f.input :title, label: "标题"%>
+      <%= f.input :description, label: "内容"%>
+      <%= f.input :wage_lower_bound, label: "最低工资"%>
+      <%= f.input :wage_upper_bound, label: "最高工资"%>
+      <%= f.input :contact_email, label: "邮箱"%>
+      <%= f.input :is_hidden, label: "隐藏"%>
+      <%= f.submit "提交", class: "btn btn-primary"%>
     <% end %>
-    <br/>
-    <%= link_to "Back", jobs_path, class: "btn btn-primary" %>
   </div>
 </div>
