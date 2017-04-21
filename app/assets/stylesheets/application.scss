@@ -51,13 +51,17 @@
 // ------layout margin-top------
 .admin-layout,
 .jobs-layout {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .welcome-layout {
   margin-top: 50px;
 }
-
+//-----排序按钮 & add a job button-------
+.pull-right button,
+.pull-right .new-job{
+  margin-top: 20px;
+}
 .custab{
   border: 1px solid #ccc;
 
@@ -119,8 +123,6 @@
 
 //-----edit lag-picture-------
 .jumbotron {
- //  background-image:url('http://fullstack-public.oss-cn-qingdao.aliyuncs.com/2017-04-15-542213.png');
- // background-image: url(welcome.png);
   background-image: url(up.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -135,15 +137,19 @@
   filter: grayscale(60%);
   height :450px;
 }
-
- // title {
- //   background-color: rgba(250, 250, 250, 0.39);//背景颜色含透明度
- //   max-width: 500px;//最大宽度
- //   margin-top: 200px;//和顶部拉开距离
- //   margin-bottom: 0;//这样就可以紧接息面的描述文字
- //   border-top-right-radius: 3px;//右上角圆边
- //   border-top-left-radius: 3px;//左上角圆边
- // }
+.col-sm-10 .jumbotron {
+  background-image: url(up.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 0;//圆角为0
+  opacity:0.8;
+  filter: grayscale(60%);
+  height :150px;
+  // border: solid red 3px;
+  margin-bottom: 0;
+}
+//----------网站介绍---------
  .intro .lead {
    text-align: center;
    margin-top: 20px;
