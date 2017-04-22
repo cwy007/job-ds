@@ -10,8 +10,8 @@
   </head>
 
   <body id="myPage">
-    <div class="container-fluid">
-      <div class="row">
+    <div class="container-fluid" id="wrap">
+      <div class="row" id="main">
         <%= render "common/navbar" %>
 
         <div class="col-sm-10 col-sm-offset-1 jobs-layout">
@@ -21,8 +21,8 @@
         </div>
       </div>
     </div>
-
-    <%= render "common/footer" %>
-
+    <div id="footer">
+      <%= render "common/footer" %>
+    </div>
   </body>
 </html>
