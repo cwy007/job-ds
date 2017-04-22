@@ -110,8 +110,10 @@
 }
 
 //-----edit lag-picture-------
+// background-image: image-url("rails.png")
+
 .jumbotron {
-  background-image: url(jobs-layout.png);
+  background-image: image-url("jobs-layout.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -127,7 +129,7 @@
 }
 .admin-layout .jumbotron,
 .jobs-layout .jumbotron {
-  background-image: url("jobs-layout.png");
+  background-image: image-url("jobs-layout.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
