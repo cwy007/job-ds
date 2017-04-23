@@ -35,16 +35,7 @@
    background-color: #ffffff;
  }
 
-//------refine admin table---------
-// // ------layout margin-top------
-// .admin-layout,
-// .jobs-layout {
-//   margin-top: 50px;
-// }
-//
-// .welcome-layout {
-//   margin-top: 50px;
-// }
+
 //-----排序按钮 & add a job button-------
 .pull-right button,
 .pull-right .new-job{
@@ -249,8 +240,39 @@ html, body {
       color: #fff;
       text-decoration: none;
   }
+  //---------提示信息---------
+  .alert {
+    margin: 0;
+  }
 
-  
+  //-------登录页面------
+  #devise {
+    margin: 0;
+    height: 600px;
+    background-image: image-url("devise.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(10%);
+
+    // opacity:0.9;
+    // color: white;
+
+  }
+  #log-in,
+  #sign-up {
+    padding: 40px 50px;
+    width: 530px;
+    opacity:0.97;
+    background-color: white;
+    // height: 500px;
+    margin: 0px auto;
+    // border: red solid 3px;
+  }
+
+  #devise h2 {
+    text-align: center;
+  }
 // -------分页-------
 .digg_pagination {
   margin-bottom: 20px;

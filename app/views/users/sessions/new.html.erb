@@ -1,0 +1,20 @@
+<div id="devise">
+  <div id="log-in" >
+    <h2>登 录</h2>
+    <hr/>
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-inputs">
+        <%= f.input :email, label: "邮箱", required: false, autofocus: true %>
+        <%= f.input :password, label: "密码", required: false %>
+        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "登 录", class: "btn btn-info btn-block"%>
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+  </div>
+
+</div>
