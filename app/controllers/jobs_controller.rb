@@ -10,6 +10,7 @@ class JobsController < ApplicationController
             else
               Job.publish.recent.paginate(:page => params[:page], :per_page => 20)
             end
+    @categories = Category.all 
   end
 
   def show

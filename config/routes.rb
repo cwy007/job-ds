@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       end
     end
   end
+  resources :categories
   get '/admin/resumes/favos/', to: 'admin/resumes#favos'
   root 'welcome#index'
 end
