@@ -13,15 +13,18 @@ class Admin::JobsController < ApplicationController
 
   def new
     @job = Job.new
+    @categories = Category.all.map { |c| [c.name, c.id] } #这一行为加入的代码
   end
 
   def edit
     @job = Job.find(params[:id])
+    @categories = Category.all.map { |c| [c.name, c.id] } #这一行为加入的代码
   end
 
   def create
     @job = Job.new(job_params)
     @job.user = current_user
+    @job.category_id = params[:category_id]
     if @job.save
       redirect_to admin_jobs_path, notice: "Job was created successfully!"
     else
@@ -60,7 +63,7 @@ class Admin::JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:title, :description, :is_hidden, :wage_lower_bound, :wage_upper_bound, :contact_email)
+    params.require(:job).permit(:title, :description, :is_hidden, :wage_lower_bound, :wage_upper_bound, :contact_email, :category_id)
   end
 
 end

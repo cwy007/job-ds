@@ -8,6 +8,7 @@
       <%= f.input :wage_lower_bound, label: "最低工资"%>
       <%= f.input :wage_upper_bound, label: "最高工资"%>
       <%= f.input :contact_email, label: "邮箱"%>
+      <%= f.select :category_id, @categories %>
       <%= f.input :is_hidden, label: "隐藏"%>
       <%= f.submit "提交", class: "btn btn-primary"%>
     <% end %>

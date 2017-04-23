@@ -6,6 +6,7 @@ class Job < ApplicationRecord
 
   has_many :resumes
   belongs_to :user
+  belongs_to :category
 
   scope :recent, -> { order('created_at DESC')}
   scope :publish, -> { where(:is_hidden => false) }

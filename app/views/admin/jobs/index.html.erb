@@ -7,6 +7,7 @@
     <tr>
       <th>状态</th>
       <th>职缺</th>
+      <th>类别</th>
       <th>简历数量</th>
       <th>工资下限</th>
       <th>工资上限</th>
@@ -22,6 +23,9 @@
         </td>
         <td>
           <%= link_to job.title, admin_job_path(job) %>
+        </td>
+        <td>
+          <%= job.category.name %>
         </td>
         <td>
           <%= link_to job.resumes.count, admin_job_resumes_path(job) %>
