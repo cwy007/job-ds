@@ -331,13 +331,24 @@ html, body {
   *:first-child + html .digg_pagination {
     overflow: hidden; }
 
-//-------job-list----------
+//-------job-list应征页面边栏----------
 div.row .col-sm-3 .btn-group-vertical{
   padding: 0;
   background-color: #f8f9fb;
   display: block;
   // border: red solid 3px;
 }
+
+div.row .col-sm-3 .job-menu {
+  padding: 0;
+}
+
+.job-menu dl:hover {
+  background-color: #fff;
+  color: #5dd5c9;
+
+}
+
 .job-menu a {
   color: #61687c;
 }
@@ -345,6 +356,7 @@ div.row .col-sm-3 .btn-group-vertical{
 .job-menu a:hover,
 .job-menu a:focus {
   color: #5dd5c9;
+  text-decoration: none;
 }
 
 .job-menu {
@@ -358,6 +370,8 @@ div.row .col-sm-3 .btn-group-vertical{
     padding: 10px 0;
     border: 1px #f8f9fb solid;
     zoom: 1;
+    margin: 0;
+    color: #61687c;
 }
 
 dl {
@@ -388,34 +402,47 @@ div.divider {
 }
 
 
-//-----jobs/index-----
+//-----jobs/index应征页面-----
 ul.job-list {
   margin-top: 21px;
   background-color: #ffffff;
 
 }
+
 .job-list li {
     padding: 22px 40px;
-    border-bottom: 1px #f2f2f5 solid;
+    // border-top: 1px #fff solid;
+    // border-bottom: 1px #fff solid;
     overflow: hidden;
 }
+
 div.info-primary .job.list h3 {
   color: #61687c;
 }
+
 .job-primary .info-primary {
     float: left;
     color: #4a4160;
 }
+
 .red {
     color: #fc703e;
 }
+
 .info-time {
     margin-top: 37px;
     margin-bottom: 0;
     float: right;
     color: #61687c;
 }
-.job-list li p {
+
+li.job-primary p {
     margin-top: 17px;
     margin-bottom: 0;
+}
+
+li.job-primary:hover ,
+li.job-primary:focus {
+  background-color: #f8f9fb;
+
 }

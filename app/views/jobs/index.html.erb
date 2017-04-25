@@ -11,11 +11,15 @@
     <div class="col-sm-12 job-menu">
       <div class="btn-group btn-group-vertical" role="group" aria-label="...">
         <% @categories.each do |category| %>
+        <a href="/categories/<%= category.id %>">
           <dl>
             <dt>
-              <%= link_to category.name, category_path(category) %>
+              <%= category.name %>
+              <!-- <%= link_to category.name, category_path(category) %> -->
+
             </dt>
           </dl>
+        </a>
         <% end %>
         <div class="divider"></div>
         <div class="btn-group" role="group">
@@ -41,9 +45,8 @@
     <ul class="job-list">
       <% @jobs.each do |job| %>
       <a href="/jobs/<%= job.id %>">
-        <li class="job-primary">
+      <li class="job-primary">
           <div class="info-primary">
-            <!-- <h3><%= link_to job.title, job_path(job)%></h3> -->
             <h3><%= job.title %></h3>
             <p class="red"><%= job.wage_lower_bound %> K - <%= job.wage_upper_bound %>K </p>
           </div>
