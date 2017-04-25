@@ -20,12 +20,9 @@
  //----background-color------
  body {
    background-color: #f2f2f5;
+   line-height: 28px;
+ }
 
- }
-//----application layout---
- div.jobs-layout {
-   background-color: #ffffff;
- }
 //---admin layout----
  div.container-fluid .col-sm-offset-1 .col-sm-2 {
    background-color: #f8f9fb;
@@ -33,27 +30,14 @@
 
  div.container-fluid .col-sm-offset-1 .col-sm-10 {
    background-color: #ffffff;
+   margin:0;
  }
 
 
 //-----排序按钮 & add a job button-------
-.pull-right button,
-.pull-right .new-job{
+div.btn-group.pull-right {
   margin-top: 20px;
-}
-.custab{
-  border: 1px solid #ccc;
-
-  padding: 5px;
-  margin: 5% 0;
-  // box-shadow: 3px 3px 2px #ccc;
-  //
-  // transition: 0.5s;
-}
-
-.custab:hover{
-  // box-shadow: 3px 3px 0px transparent;
-  // transition: 0.5s;
+  margin-right: 40px;
 }
 
  //----Style The Navbar------
@@ -109,34 +93,54 @@ ul.dropdown-menu {
 // background-image: image-url("rails.png")
 
 .jumbotron {
-  background-image: image-url("jobs-layout.png");
+  background-image: image-url("welcome-layout.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   padding-bottom: 110px;
   margin-top: 0;
- //  border: solid red 3px;
   padding-bottom: 110px;//内部的底部边距，这样按钮不会很靠近底部了
-  margin: 0 -15px;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
   border-radius: 0;//圆角为0
-  opacity:0.8;
-  filter: grayscale(60%);
-  height :450px;
+  // opacity:0.2;
+  z-index: -1;
+  // filter: grayscale(60%);
+  height :750px;
+  // bottom: 0;
 }
-.admin-layout .jumbotron,
+.jumbotron a:hover {
+  text-decoration: none;
+}
+
+.admin-layout .jumbotron {
+  background-image: image-url("admin-layout.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 0;//圆角为0
+  // opacity:0.8;
+  // filter: grayscale(60%);
+  height :150px;
+  margin-bottom: 0;
+}
+
 .jobs-layout .jumbotron {
   background-image: image-url("jobs-layout.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   border-radius: 0;//圆角为0
-  opacity:0.8;
-  filter: grayscale(60%);
+  // opacity:0.8;
+  // filter: grayscale(60%);
   height :150px;
-  // border: solid red 3px;
   margin-bottom: 0;
 }
+.jumbotron h1.admin,
+.jumbotron h1.jobs {
 
+  color: #fc6c38;
+
+  margin-top: -15px;
+}
 .intro a.btn-lg {
   margin-bottom: 60px;
   margin-top: 20px;
@@ -146,7 +150,9 @@ ul.dropdown-menu {
 //----------网站介绍---------
 .intro {
   background-color: #f2f2f2;
-  margin: 0 -15px;
+  // margin: 60px -15px;
+  padding: 30px 0 50px 0;
+
   // border: solid #fff 3px;
 }
  .intro .lead {
@@ -161,12 +167,12 @@ ul.dropdown-menu {
     //  border: solid red 3px;
 
   }
-  // <i class="fa fa-pencil"></i>
-  // <i class="fa fa-pencil-square-o"></i>
-// <i class="fa fa-trash-o"></i>
+
   .intro p {
     text-align: center;
     font-size: 20px;
+    line-height: 56px;
+    word-spacing: 20px;
     //  border: solid red 3px;
 
   }
@@ -174,18 +180,19 @@ ul.dropdown-menu {
   //------thumbnail-------
   .language {
     background-color: #fff;
+    padding: 60px 0 120px;
   }
 
   .language h2 {
     margin-top: 20px;
-    // margin-bottom: 40px;
+    margin-bottom: 40px;
     // border: solid red 3px;
   }
 
   .language p {
     text-align: center;
     font-size: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
   }
 
   .thumbnail {
@@ -258,11 +265,8 @@ html, body {
     background-size: cover;
     background-position: center;
     filter: grayscale(10%);
-
-    // opacity:0.9;
-    // color: white;
-
   }
+
   #log-in,
   #sign-up {
     padding: 40px 50px;
@@ -281,7 +285,7 @@ html, body {
 .digg_pagination {
   margin-bottom: 20px;
   text-align: center;
-  background: white;
+  background: #f2f2f5;
   cursor: default;
   /* self-clearing method: */ }
   .digg_pagination a, .digg_pagination span, .digg_pagination em {
@@ -316,3 +320,92 @@ html, body {
     height: 1%; }
   *:first-child + html .digg_pagination {
     overflow: hidden; }
+
+//-------job-list----------
+div.row .col-sm-3 .btn-group-vertical{
+  padding: 0;
+  background-color: #f8f9fb;
+  display: block;
+  // border: red solid 3px;
+}
+.job-menu a {
+  color: #61687c;
+}
+
+.job-menu a:hover,
+.job-menu a:focus {
+  color: #5dd5c9;
+}
+
+.job-menu {
+    background: #f8f9fb;
+    color: #61687c;
+    position: relative;
+    z-index: 20;
+}
+
+.job-menu dl {
+    padding: 10px 0;
+    border: 1px #f8f9fb solid;
+    zoom: 1;
+}
+
+dl {
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+.job-menu dt {
+  font-size: 18px;
+  padding: 0 32px;
+  line-height: 32px;
+  padding-top: 8px;
+}
+
+.job-menu dd {
+  padding: 8px 30px 10px 18px;
+  width: 260px;
+  text-align:center;
+}
+
+div.divider {
+  border: 3px #f2f2f5 solid;
+  padding-left: 100px;
+  // margin: 0 10px;
+}
+
+
+//-----jobs/index-----
+ul.job-list {
+  margin-top: 21px;
+  background-color: #ffffff;
+
+}
+.job-list li {
+    padding: 22px 40px;
+    border-bottom: 1px #f2f2f5 solid;
+    overflow: hidden;
+}
+div.info-primary .job.list h3 {
+  color: #61687c;
+}
+.job-primary .info-primary {
+    float: left;
+    color: #4a4160;
+}
+.red {
+    color: #fc703e;
+}
+.info-time {
+    margin-top: 37px;
+    margin-bottom: 0;
+    float: right;
+    color: #61687c;
+}
+.job-list li p {
+    margin-top: 17px;
+    margin-bottom: 0;
+}
