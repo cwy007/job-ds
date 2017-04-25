@@ -257,6 +257,15 @@ html, body {
   }
 
   //-------登录页面------
+  #myModal {
+    margin: 0;
+    height: 800px;
+    background-image: image-url("devise.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(10%);
+  }
   #devise {
     margin: 0;
     height: 600px;
@@ -267,6 +276,7 @@ html, body {
     filter: grayscale(10%);
   }
 
+  .modal-body,
   #log-in,
   #sign-up {
     padding: 40px 50px;
@@ -277,7 +287,7 @@ html, body {
     margin: 0px auto;
     // border: red solid 3px;
   }
-
+  #myModal h4,
   #devise h2 {
     text-align: center;
   }
