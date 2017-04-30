@@ -177,7 +177,7 @@ ul.dropdown-menu {
 
   }
 
-  //------thumbnail-------
+  // ------thumbnail-------
   .language {
     background-color: #fff;
     padding: 60px 0 90px;
@@ -198,15 +198,22 @@ ul.dropdown-menu {
   .thumbnail {
     padding: 0 0 15px 0;
     border: none;
-    border-radius: 0;
+    width: 100px;
+    height: 150px;
+    overflow: hidden;
+    border: 6px solid transparent;
+
   }
 
-  .thumbnail img {
-      height: 150px;
-      width: 150px;
-      margin-bottom: 10px;
+  .thumbnail:hover {
+      border: 1px solid #fc703e;
+      cursor: pointer;
   }
 
+  .thumbnail p {
+    margin-top: 20px;
+
+  }
   //-----还回到顶部-------
   #backtotop {
     position: fixed;
