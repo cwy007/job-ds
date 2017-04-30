@@ -477,3 +477,8 @@ li.job-primary:focus {
   background-color: #f8f9fb;
 
 }
+
+//-----jumbotron------
+.container .jumbotron, .container-fluid .jumbotron {
+    border-radius: 0;
+}
