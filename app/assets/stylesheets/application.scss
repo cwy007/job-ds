@@ -409,12 +409,12 @@ ul.job-list {
 
 }
 
-.job-list li {
-    padding: 22px 40px;
-    // border-top: 1px #fff solid;
-    // border-bottom: 1px #fff solid;
-    overflow: hidden;
-}
+// li.job-primary {
+//     padding: 22px 40px;
+//     border: 10px #f2f2f5 solid;
+//     // border-bottom: 1px #a8b6d4 solid;
+//     overflow: hidden;
+// }
 
 div.info-primary .job.list h3 {
   color: #61687c;
@@ -439,6 +439,14 @@ div.info-primary .job.list h3 {
 li.job-primary p {
     margin-top: 17px;
     margin-bottom: 0;
+}
+
+li.job-primary {
+    padding: 22px 40px;
+    border-bottom: 1px #f2f2f5  solid;
+    overflow: hidden;
+    background-color: #ffffff;
+
 }
 
 li.job-primary:hover ,

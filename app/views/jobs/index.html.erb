@@ -9,14 +9,13 @@
 <div class="row">
   <div class="col-sm-3">
     <div class="col-sm-12 job-menu">
-      <div class="btn-group btn-group-vertical" role="group" aria-label="...">
+      <div class="btn-group btn-group-vertical " role="group" aria-label="...">
         <% @categories.each do |category| %>
         <a href="/categories/<%= category.id %>">
           <dl>
             <dt>
+              <i class="fa fa fa-external-link" aria-hidden="true"></i>
               <%= category.name %>
-              <!-- <%= link_to category.name, category_path(category) %> -->
-
             </dt>
           </dl>
         </a>
@@ -28,13 +27,13 @@
               排序
             </dt>
             <dd>
-              <%= link_to "按工资下限排序", jobs_path(:order => 'by_lower_bound') %>
+              <%= link_to " 按工资下限排序", jobs_path(:order => 'by_lower_bound'), class: "fa fa-sort-numeric-asc" %>
             </dd>
             <dd>
-              <%= link_to "按工资上限排序", jobs_path(:order => 'by_upper_bound') %>
+              <%= link_to " 按工资上限排序", jobs_path(:order => 'by_upper_bound'), class: "fa fa-sort-numeric-desc" %>
             </dd>
             <dd>
-              <%= link_to "按发表时间排序", jobs_path %>
+              <%= link_to " 按发表时间排序", jobs_path, class: "fa fa-clock-o" %>
             </dd>
           </dl>
         </div>
