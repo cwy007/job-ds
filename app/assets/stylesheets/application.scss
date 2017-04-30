@@ -99,9 +99,9 @@ ul.dropdown-menu {
   margin-top: 0;
   padding-bottom: 110px;//内部的底部边距，这样按钮不会很靠近底部了
   border-radius: 0;//圆角为0
-  // opacity:0.2;
+  opacity:0.9;
   z-index: -1;
-  // filter: grayscale(60%);
+  filter: grayscale(40%);
   height :750px;
   // bottom: 0;
 }
@@ -119,9 +119,6 @@ ul.dropdown-menu {
   margin-bottom: 0;
   padding: 0;
 }
-
-//   padding: -10px;
-// }
 
 .jobs-layout .jumbotron {
   background-image: image-url("jobs-layout.png");

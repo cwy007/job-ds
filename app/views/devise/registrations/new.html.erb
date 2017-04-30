@@ -7,6 +7,8 @@
 
       <div class="form-inputs sign-up">
         <%= f.input :email, required: true, autofocus: true, label: "邮箱"%>
+        <%= f.input :name, required: true %> 
+        <%= f.input :is_admin, as: :radio_buttons, collection:  [['一般用户', false], ['企业用户', true]], required: true %>
         <%= f.input :password, required: true, label: "密码", hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
         <%= f.input :password_confirmation, required: true , label: "确认密码"%>
       </div>

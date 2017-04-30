@@ -8,7 +8,7 @@
 
 puts "這個種子檔會自動建立一個admin帳號, 並且創建 30 個 public jobs, 以及39個hidden jobs"
 
-create_account = User.create([email: '101@qq.com', password: '123456', password_confirmation: '123456', is_admin: 'true'])
+create_account = User.create([email: '101@qq.com',name: "fullStack", password: '123456', password_confirmation: '123456', is_admin: 'true'])
 puts "Admin account created."
 
 ["后端开发", "移动开发", "前端开发", "测试", "运维/技术支持", "项目管理"].each do |c|
