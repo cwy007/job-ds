@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <h1 class="text-center">搜索结果</h1>
+    <ul class="job-list">
+      <% @jobs.each do |job| %>
+      <a href="/jobs/<%= job.id %>">
+      <li class="job-primary">
+          <div class="info-primary">
+            <h3><%= job.title %></h3>
+            <p class="red"><%= job.wage_lower_bound %> K - <%= job.wage_upper_bound %>K </p>
+            <p><%= job.job_address %></p>
+          </div>
+          <div class="info-time">
+            <p class="company-name"><%= job.company_name %></p>
+            <p class="time"><%= newTimeFormat(job.created_at) %></p>
+          </div>
+        </li>
+      </a>
+      <% end %>
+    </ul>
+    <div class="digg_pagination">
+      <%= will_paginate @jobs, :container => false %>
+    </div>
+  </div>
+</div>

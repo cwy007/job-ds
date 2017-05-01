@@ -1,6 +1,8 @@
 class JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :require_is_admin, only: [:new, :create, :edit, :update, :destroy]
+  before_action :validates_search_key, only: [:search]
+
   def index
     @jobs = case params[:order]
             when 'by_lower_bound'
@@ -54,7 +56,19 @@ class JobsController < ApplicationController
     redirect_to jobs_path, alert: "工作已删除!"
   end
 
+  def search
+  	@jobs = Job.ransack( :title_or_job_address_or_company_name_cont => @q ).result(distinct: true).publish.recent.paginate(:page => params[:page], :per_page => 5)
+    if @jobs.blank?
+      flash[:warning] = "查询不存在！"
+      redirect_to jobs_path
+    end
+  end
+
   private
+
+  def validates_search_key
+  	@q = params[:q].gsub(/\\|\'|\/|\?/, "") if params[:q].present?
+  end
 
   def job_params
     params.require(:job).permit(:title, :description, :is_hidden, :wage_lower_bound, :wage_upper_bound, :contact_email)
