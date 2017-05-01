@@ -1,7 +1,7 @@
 # Chinese (China) translations for Devise(4.2.0)
 # by HealthGrid (https://github.com/HealthGrid)
 
-zh-CN:
+en:
   devise:
     confirmations:
       confirmed: "您的帐号已经确认，您现在已登录。"

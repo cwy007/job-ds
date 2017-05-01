@@ -11,6 +11,7 @@
       <th>简历数量</th>
       <th>工资下限</th>
       <th>工资上限</th>
+      <th>工作地点</th>
       <th>管理选项</th>
       <th>发布时间</th>
     </tr>
@@ -37,6 +38,9 @@
           <%= job.wage_upper_bound %>
         </td>
         <td>
+          <%= job.job_address %>
+        </td>
+        <td>
           <% if job.is_hidden %>
           <span data-toggle="tooltip" data-placement="top" title="发布">
             <%= link_to "", publish_admin_job_path(job), method: :post, class: "btn btn-xs btn-success fa fa-unlock" %>
@@ -57,9 +61,8 @@
           </span>
         </td>
         <td>
-          <%= job.created_at %>
+          <%= newTimeFormat(job.created_at) %>
         </td>
-
       </tr>
     <% end %>
   </tbody>
