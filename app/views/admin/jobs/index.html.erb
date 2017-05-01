@@ -12,6 +12,7 @@
       <th>工资下限</th>
       <th>工资上限</th>
       <th>工作地点</th>
+      <th>公司名称</th>
       <th>管理选项</th>
       <th>发布时间</th>
     </tr>
@@ -39,6 +40,9 @@
         </td>
         <td>
           <%= job.job_address %>
+        </td>
+        <td>
+          <%= job.company_name %>
         </td>
         <td>
           <% if job.is_hidden %>
