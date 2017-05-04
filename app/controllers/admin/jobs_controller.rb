@@ -65,7 +65,7 @@ class Admin::JobsController < ApplicationController
   def job_params
     params.require(:job).permit(:title, :description, :is_hidden,
                   :wage_lower_bound, :wage_upper_bound, :contact_email,
-                  :category_id, :job_address, :company_name)
+                  :category_id, :job_address, :company_name, :company_image)
   end
 
 end

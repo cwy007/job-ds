@@ -31,10 +31,17 @@
         </li>
         <% end %>
         <% if !current_user %>
-          <li><%= link_to " 注册", new_user_registration_path, class: "fa fa-sign-in" %></li>
           <li>
-            <!-- <i class="fa fa-sign-in" aria-hidden="true"></i> -->
-            <%= link_to " 登录", new_user_session_path, class: "fa fa-sign-in" %>
+            <%= link_to new_user_registration_path do%>
+            <i class="fa fa-sign-in" aria-hidden="true" ></i><br>
+             注册
+             <% end %>
+          </li>
+          <li>
+            <%= link_to new_user_session_path do%>
+            <i class="fa fa-sign-in" aria-hidden="true" ></i><br>
+             登录
+             <% end %>
           </li>
         <% else %>
           <li class="dropdown">

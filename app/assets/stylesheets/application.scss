@@ -82,8 +82,8 @@ div.btn-group.pull-right {
 
 /* Dropdown links */
 .dropdown-menu li a {
-    color: #000 !important;
-
+  color: #000 !important;
+  text-align: left;
 }
 
 /* On hover, the dropdown links will turn */
@@ -207,7 +207,7 @@ ul.dropdown-menu {
     margin-bottom: 60px;
   }
 
-  .thumbnail {
+  div.col-sm-2 .thumbnail {
     padding: 0 0 15px 0;
     border: none;
     width: 100px;
@@ -217,12 +217,12 @@ ul.dropdown-menu {
 
   }
 
-  .thumbnail:hover {
+  div.col-sm-2 .thumbnail:hover {
       border: 1px solid #fc703e;
       cursor: pointer;
   }
 
-  .thumbnail p {
+  div.col-sm-2 .thumbnail p {
     margin-top: 20px;
 
   }
@@ -505,4 +505,17 @@ li.job-primary:focus {
 //----搜索框------
 .query {
   background-color: #f2f2f5;
+}
+
+//---job show-------
+ul.job-item li.job-primary {
+  background-color: #e7e7e9;
+  opacity:1;
+  z-index: -1;
+}
+
+div.company_image {
+  margin-left: 30px;
+  margin-top: 20px;
+
 }

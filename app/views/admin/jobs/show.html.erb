@@ -3,23 +3,16 @@
     <h1 class="text-center">
       <%= @job.title %>
     </h1>
-    <p>
+    <span class: "pull-right">
       <%= link_to "收到的简历 -->", admin_job_resumes_path(@job), class: "pull-right", style: "text-decoration:underline;"%>
-    </p>
-
-    <!-- <tbody>
-      <tr>
-        <td>
-          <%= link_to "收到的简历", admin_job_resumes_path(@job), class: "pull-right"%>
-        </td>
-        <td>
-          <%= link_to "收到的简历", admin_job_resumes_path(@job), class: "pull-right"%>
-        </td>
-      </tr>
-    </tbody> -->
-    <!-- <%= link_to "收到的简历", admin_job_resumes_path(@job), class: "pull-right"%> -->
-
+    </span>
+    <% if @job.company_image.present? %>
+      <span>当前的公司图标</span><br/>
+      <%= image_tag(@job.company_image.thumb.url, class: "thumbnail") %>
+    <% else %>
+      <span>当前的公司图标</span></br>
+      <%= image_tag("http://placehold.it/100x100px&text=No Pic") %>
+    <% end %>
     <p><%= simple_format(@job.description) %></p>
-
   </div>
 </div>

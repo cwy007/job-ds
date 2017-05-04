@@ -17,7 +17,7 @@ class ResumesController < ApplicationController
     @resume.job = @job
     @resume.user = current_user
     if @resume.save
-      redirect_to job_path(@job), notice: "简历提交成功!"
+      redirect_to job_path(@job)
     else
       render :new
     end
@@ -27,7 +27,7 @@ class ResumesController < ApplicationController
     @job = Job.find(params[:job_id])
     @resume = Resume.find(params[:id])
     if @resume.update(resume_params)
-      redirect_to job_path(@job), notice: "简历修改成功!"
+      redirect_to job_path(@job)
     else
       render :edit
     end
@@ -37,7 +37,7 @@ class ResumesController < ApplicationController
     @job = Job.find(params[:job_id])
     @resume = Resume.find(params[:id])
     @resume.destroy
-    redirect_to job_path(@job), alert: "简历已删除!"
+    redirect_to job_path(@job)
   end
 
   private

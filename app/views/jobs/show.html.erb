@@ -1,6 +1,25 @@
+<ul class="job-list job-item">
+  <li class="job-primary">
+    <div class="info-primary">
+      <h3><%= @job.title %></h3>
+      <p class="red"><%= @job.wage_lower_bound %> K - <%= @job.wage_upper_bound %>K </p>
+      <p><%= @job.job_address %></p>
+    </div>
+    <div class="pull-right company_image">
+      <% if @job.company_image.present? %>
+      <%= image_tag(@job.company_image.thumb.url, class: "thumbnail") %>
+      <% else %>
+      <%= image_tag("http://placehold.it/100x100px&text=No Pic") %>
+      <% end %>
+    </div>
+    <div class="info-time text-right">
+      <p class="company-name"><%= @job.company_name %></p>
+      <p class="time"><%= newTimeFormat(@job.created_at) %></p>
+    </div>
+  </li>
+</ul>
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
-    <h1><%= @job.title %></h1>
     <%= link_to "职位列表 -->", jobs_path, class: "pull-right" %>
     <%= simple_format(@job.description) %>
 

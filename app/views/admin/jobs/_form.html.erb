@@ -1,0 +1,24 @@
+<%= simple_form_for [:admin,@job] do |f| %>
+  <%= f.input :title, label: "标题"%>
+  <%= f.input :description, label: "内容"%>
+  <%= f.input :wage_lower_bound, label: "最低工资"%>
+  <%= f.input :wage_upper_bound, label: "最高工资"%>
+  <%= f.input :contact_email, label: "邮箱"%>
+  <%= f.input :company_name, label: "公司名称" %>
+  <%= f.input :job_address, label: "工作地址" %>
+  <% if @job.company_image.present? %>
+    <span>当前的公司图标</span><br/>
+    <%= image_tag(@job.company_image.thumb.url) %>
+  <% else %>
+    <span>当前的公司图标</span></br>
+    <%= image_tag("http://placehold.it/100x100px&text=No Pic") %>
+  <% end %>
+  <%= f.input :company_image, as: :file %>
+  <% if @job.category.present? %>
+    <%= f.select :category_id, @categories %>
+  <% else %>
+    <%= select_tag(:category_id, options_for_select(@categories), :prompt => "类别") %>
+  <% end %>
+  <%= f.input :is_hidden, label: "隐藏" %>
+  <%= f.submit "提交", class: "btn btn-primary"%>
+<% end %>

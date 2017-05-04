@@ -43,18 +43,18 @@
   <div class="col-sm-9">
     <ul class="job-list">
       <% @jobs.each do |job| %>
-      <a href="/jobs/<%= job.id %>" target="_blank">
+      <a href="/jobs/<%= job.id %>">
       <li class="job-primary">
-          <div class="info-primary">
-            <h3><%= job.title %></h3>
-            <p class="red"><%= job.wage_lower_bound %> K - <%= job.wage_upper_bound %>K </p>
-            <p><%= job.job_address %></p>
-          </div>
-          <div class="info-time">
-            <p class="company-name"><%= job.company_name %></p>
-            <p class="time"><%= newTimeFormat(job.created_at) %></p>
-          </div>
-        </li>
+        <div class="info-primary">
+          <h3><%= job.title %></h3>
+          <p class="red"><%= job.wage_lower_bound %> K - <%= job.wage_upper_bound %>K </p>
+          <p><%= job.job_address %></p>
+        </div>
+        <div class="info-time">
+          <p class="company-name"><%= job.company_name %></p>
+          <p class="time"><%= newTimeFormat(job.created_at) %></p>
+        </div>
+      </li>
       </a>
       <% end %>
     </ul>
