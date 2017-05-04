@@ -16,59 +16,59 @@ puts "Admin account created."
 end
 puts "6 categories created."
 
-create_jobs = for i in 1..10 do
+create_jobs = for i in 1..5 do
 
   Job.create!([title: "Job no.#{i}", description: "這是用種子建立的第 #{i} 個Public工作",
              wage_upper_bound: rand(50..99)*100, wage_lower_bound: rand(10..49)*100,
              is_hidden: "false", user_id: 1, category_id: 1, job_address: "北京",
-             company_name: "京东"])
+             company_name: "京东", company_image: nil])
 
 end
-puts "20 Public jobs created."
+puts "5 Public jobs created."
 
-create_jobs = for i in 1..10 do
+create_jobs = for i in 1..5 do
 
   Job.create!([title: "Job no.#{i+10}", description: "這是用種子建立的第 #{i+10} 個Hidden工作",
               wage_upper_bound: rand(50..99)*100, wage_lower_bound: rand(10..49)*100,
               is_hidden: "true", user_id: 1, category_id: 2, job_address: "上海",
-              company_name: "汽车之家"])
+              company_name: "汽车之家", company_image: nil])
 end
-puts "20 Hidden jobs created."
+puts "5 Hidden jobs created."
 
-create_jobs = for i in 1..10 do
+create_jobs = for i in 1..5 do
 
   Job.create!([title: "Job no.#{i}", description: "這是用種子建立的第 #{i} 個Public工作",
                wage_upper_bound: rand(50..99)*100, wage_lower_bound: rand(10..49)*100,
                is_hidden: "false", user_id: 1, category_id: 3, job_address: "广州",
-               company_name: "Tencent"])
+               company_name: "腾讯", company_image: nil])
 
 end
-puts "20 Public jobs created."
+puts "5 Public jobs created."
 
-create_jobs = for i in 1..10 do
+create_jobs = for i in 1..5 do
 
   Job.create!([title: "Job no.#{i+10}", description: "這是用種子建立的第 #{i+10} 個Hidden工作",
               wage_upper_bound: rand(50..99)*100, wage_lower_bound: rand(10..49)*100,
               is_hidden: "true", user_id: 1, category_id: 4, job_address: "深圳",
-              company_name: "华为"])
+              company_name: "华为", company_image: nil])
 end
-puts "20 Hidden jobs created."
+puts "5 Hidden jobs created."
 
-create_jobs = for i in 1..10 do
+create_jobs = for i in 1..5 do
 
   Job.create!([title: "Job no.#{i}", description: "這是用種子建立的第 #{i} 個Public工作",
                 wage_upper_bound: rand(50..99)*100, wage_lower_bound: rand(10..49)*100,
                 is_hidden: "false", user_id: 1, category_id: 5, job_address: "郑州",
-                company_name: "美团"])
+                company_name: "美团", company_image: nil])
 
 end
-puts "20 Public jobs created."
+puts "5 Public jobs created."
 
-create_jobs = for i in 1..10 do
+create_jobs = for i in 1..5 do
 
   Job.create!([title: "Job no.#{i+10}", description: "這是用種子建立的第 #{i+10} 個Hidden工作",
               wage_upper_bound: rand(50..99)*100, wage_lower_bound: rand(10..49)*100,
-              is_hidden: "true", user_id: 1, category_id: 6, job_address: "杭州",
-              company_name: "阿里巴巴"])
+              is_hidden: "false", user_id: 1, category_id: 6, job_address: "杭州",
+              company_name: "阿里巴巴", company_image: nil])
 end
-puts "20 Hidden jobs created."
+puts "5 Hidden jobs created."

@@ -34,7 +34,7 @@ class Admin::JobsController < ApplicationController
 
   def update
     @job = Job.find(params[:id])
-    if @job.save(job_params)
+    if @job.update(job_params)
       redirect_to admin_jobs_path, notice: "修改成功!"
     else
       render :edit
