@@ -9,12 +9,12 @@
     <link rel="shortcut icon" href="/images/favicon.ico">
   </head>
 
-  <body id="myPage">
+  <body id="myPage" class="welcome">
     <div class="container-fluid">
       <div class="row">
         <%= render "common/navbar" %>
         <%= render "common/flashes" %>
-        <div class="welcome-layout">
+        <div class=" col-sm-12 welcome-layout">
           <%= yield %>
         </div>
       </div>

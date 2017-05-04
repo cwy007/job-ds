@@ -24,16 +24,58 @@
  }
 
 //---admin layout----
+body.admin {
+  background-color:#e6e6e6;
+  // line-height: 28px;
+  background-image: image-url("admin-bg.png");
+  background-repeat: repeat;
+  background-size: contain;
+  background-position: left;
+}
+
+body.welcome{
+  width: 100%;
+  background: url("https://ww3.sinaimg.cn/large/006tNc79gy1ff6zr9y4yoj31kw11v4bv.jpg");
+  //使用 iPic这个软件即可将图片转换为图片超链接，app store 搜索 iPic 即可
+  padding-right: -1044px;
+  background-size: cover;
+  //这段代码主要实现了图片不会被拉伸变现的效果，具体细则在我发布的另一个教程中有说明
+  // padding-right: -110px;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  font-family: 'Open Sans', sans-serif;
+  // opacity: 0.6;
+}
+
+body.admin h1.admin {
+  padding-top: 35px;
+}
+
+table.admin tbody tr {
+  height: 80px;
+}
+table.admin tbody td {
+padding-top: 30px;
+
+}
 div.col-sm-2 ul.nav.nav-pills.nav-stacked {
   background-color: #f8f9fb;
   padding: 0;
 }
 
 div.admin-yield {
-  background-color: #ffffff;
+  background-color: #fff;
+  background-image: image-url("admin-field.png");
+
   margin:0;
 }
 
+//----admin/jobs#index------
+
+a.new-job {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
 //-----排序按钮 & add a job button-------
 div.btn-group.pull-right {
   margin-top: 20px;
@@ -104,21 +146,25 @@ ul.dropdown-menu {
 
 //-----edit lag-picture-------
 // background-image: image-url("rails.png")
-
+ div.col-sm-12.welcome-layout {
+   padding-left: 0;
+   padding-right: 0.00001px;
+ }
 .jumbotron {
   background-image: image-url("welcome-layout.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  // padding-bottom: 110px;
   margin-top: 0;
+  margin-bottom: 0;
   padding-bottom: 110px;//内部的底部边距，这样按钮不会很靠近底部了
   border-radius: 0;//圆角为0
-  opacity:0.9;
+  // opacity:0.9;
   z-index: -1;
-  filter: grayscale(40%);
+  // filter: grayscale(40%);
   height :750px;
   // bottom: 0;
+  // border: 3px solid red;
 }
 .jumbotron a:hover {
   text-decoration: none;
@@ -128,6 +174,7 @@ ul.dropdown-menu {
   background-image: image-url("admin-layout.png");
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: #fff;
   background-position: center;
   border-radius: 0;//圆角为0
   height :150px;
@@ -137,22 +184,27 @@ ul.dropdown-menu {
 
 .jobs-layout .jumbotron {
   background-image: image-url("jobs-layout.png");
-  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: top;
   background-size: cover;
-  background-position: center;
+  // background-position: center;
   border-radius: 0;//圆角为0
   // opacity:0.8;
   // filter: grayscale(60%);
   height :150px;
   margin-bottom: 0;
+  z-index: 100;
 }
+
 .jumbotron h1.admin,
 .jumbotron h1.jobs {
 
   color: #fc6c38;
 
   margin-top: -15px;
+
 }
+
 .intro a.btn-lg {
   margin-bottom: 60px;
   margin-top: 20px;
@@ -162,10 +214,13 @@ ul.dropdown-menu {
 //----------网站介绍---------
 .intro {
   background-color: #f2f2f2;
+  // background-color: transparent;
+  opacity:0.8;
+
   // margin: 60px -15px;
   padding: 30px 0 50px 0;
 
-  // border: solid #fff 3px;
+  // border: solid red 3px;
 }
  .intro .lead {
    text-align: center;
@@ -301,6 +356,7 @@ html, body {
     margin: 0;
   }
 
+
   //-------登录页面------
   #myModal {
     margin: 0;
@@ -313,7 +369,7 @@ html, body {
   }
   #devise {
     margin: 0;
-    height: 600px;
+    height: 800px;
     background-image: image-url("devise.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -324,12 +380,12 @@ html, body {
   .modal-body,
   #log-in,
   #sign-up {
-    padding: 40px 50px;
+    padding: 20px 30px;
     width: 530px;
     opacity:0.97;
     background-color: white;
     // height: 500px;
-    margin: 0px auto;
+    margin: 0 auto 100px;
     // border: red solid 3px;
   }
   #myModal h4,
@@ -518,4 +574,51 @@ div.company_image {
   margin-left: 30px;
   margin-top: 20px;
 
+}
+
+//-----carousel-----
+div.carousel.welcome {
+  // height: 300px;
+  background-color: #f2f2f2;
+  // margin: 60px -15px;
+  // padding: 30px 0 100px 0;
+
+  border: solid #fff 3px;
+}
+
+div.carousel.welcome h2 {
+  margin-top: 100px;
+}
+.carousel-control.right, .carousel-control.left {
+  background-color: #f2f2f2;
+  // border: red 2px solid;
+  opacity: 1;
+  background-image: none;
+  color: #f4511e;
+}
+
+.carousel-indicators li {
+    display: none;
+
+}
+
+.carousel-indicators li.active {
+    background-color: #f4511e;
+
+}
+
+div.item {
+  // width: 100px;
+  margin-left: 20%;
+  padding-right: 32px;
+  transition-duration: 103s;
+}
+div.item li {
+  float: left;
+  list-style-type: none;
+  margin-right: 10%;
+  transition-duration: 10s;
+}
+div.carousel-inner {
+  margin: 100px 0 150px;
 }

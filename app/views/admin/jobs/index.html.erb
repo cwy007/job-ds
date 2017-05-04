@@ -2,18 +2,17 @@
   <%= link_to " 新建一份工作", new_admin_job_path, class: "btn btn-primary new-job fa fa-plus" %>
 </div>
 
-<table class="table table table-boldered table-striped custab">
+<table class="table table-hover table-boldered admin">
   <thead>
     <tr>
       <th>状态</th>
       <th>职缺</th>
       <th>类别</th>
       <th>简历数量</th>
-      <th>工资下限</th>
-      <th>工资上限</th>
+      <th>工资</th>
       <th>工作地点</th>
-      <th>公司名称</th>
-      <th>管理选项</th>
+      <th>公司</th>
+      <th>选项</th>
       <th>发布时间</th>
     </tr>
   </thead>
@@ -30,13 +29,10 @@
           <%= job.category.name %>
         </td>
         <td>
-          <%= link_to job.resumes.count, admin_job_resumes_path(job) %>
+          <%= link_to  job.resumes.count, admin_job_resumes_path(job) %>
         </td>
         <td>
-          <%= job.wage_lower_bound %>
-        </td>
-        <td>
-          <%= job.wage_upper_bound %>
+          <%= job.wage_lower_bound %> - <%= job.wage_upper_bound %>
         </td>
         <td>
           <%= job.job_address %>

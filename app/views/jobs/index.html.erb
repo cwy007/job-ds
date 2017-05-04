@@ -1,9 +1,9 @@
 <div class="jumbotron">
-  <a href="/">
+  <%= link_to "/" do %>
     <h1 class="text-center jobs" >
       <div style="float: left;">&larr;</div>顺 势 而 为
     </h1>
-  </a>
+  <% end %>
 </div>
 
 <div class="row">
@@ -47,7 +47,7 @@
       <li class="job-primary">
         <div class="info-primary">
           <h3><%= job.title %></h3>
-          <p class="red"><%= job.wage_lower_bound %> K - <%= job.wage_upper_bound %>K </p>
+          <p class="red">¥ <%= job.wage_lower_bound %> - ¥ <%= job.wage_upper_bound %> </p>
           <p><%= job.job_address %></p>
         </div>
         <div class="info-time">

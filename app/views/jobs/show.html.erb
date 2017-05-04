@@ -2,7 +2,7 @@
   <li class="job-primary">
     <div class="info-primary">
       <h3><%= @job.title %></h3>
-      <p class="red"><%= @job.wage_lower_bound %> K - <%= @job.wage_upper_bound %>K </p>
+      <p class="red">¥ <%= @job.wage_lower_bound %> - ¥ <%= @job.wage_upper_bound %> </p>
       <p><%= @job.job_address %></p>
     </div>
     <div class="pull-right company_image">
@@ -29,8 +29,8 @@
 
     <hr>
     <% @resumes.each do |resume| %>
+    <% if resume.user == current_user %>
       <div class="panel panel-info">
-        <% if resume.user = current_user %>
           <div class="panel-heading">
             <div class="panel-title">
               <p><%= resume.user.email %></p>
@@ -52,8 +52,8 @@
                                  method: :delete, data: { confirm: "你确定要删除这个简历吗?" }%>
             <%= link_to "修改", edit_job_resume_path(resume.job, resume),  class: "btn btn-success btn-xs pull-right" %>
           </div>
-        <% end %>
       </div>
+      <% end %>
     <% end %>
 
   </div>
