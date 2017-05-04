@@ -43,7 +43,7 @@
   <div class="col-sm-9">
     <ul class="job-list">
       <% @jobs.each do |job| %>
-      <a href="/jobs/<%= job.id %>">
+      <a href="/jobs/<%= job.id %>" target="_blank">
       <li class="job-primary">
           <div class="info-primary">
             <h3><%= job.title %></h3>

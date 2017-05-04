@@ -44,6 +44,7 @@ div.btn-group.pull-right {
  .navbar {
     margin-bottom: 0;
     background-color: #283e4a;
+    // background-color: #A8ACB7;
     border: 0;
     opacity:0.98;
     z-index: 10;
@@ -58,6 +59,19 @@ div.btn-group.pull-right {
  /* Add a gray color to all navbar links */
 .navbar li a, .navbar .navbar-brand {
     color: #c5cfd6 !important;
+    text-decoration: none;
+    text-align: center;
+}
+
+.navbar .navbar-brand {
+  padding-top: 20px;
+  font-size: 28px;
+  // color: #fc6c38 !important;
+}
+.navbar-form {
+  padding-top: 13px;
+  text-align: center;
+  display: inline-block;
 }
 
 // /* On hover, the links will turn white */
@@ -69,6 +83,7 @@ div.btn-group.pull-right {
 /* Dropdown links */
 .dropdown-menu li a {
     color: #000 !important;
+
 }
 
 /* On hover, the dropdown links will turn */
