@@ -150,13 +150,14 @@ ul.dropdown-menu {
    padding-left: 0;
    padding-right: 0.00001px;
  }
-.jumbotron {
+.jumbotron.welcome {
   background-image: image-url("welcome-layout.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   margin-top: 0;
   margin-bottom: 0;
+  // padding-left: 20px;
   padding-bottom: 110px;//内部的底部边距，这样按钮不会很靠近底部了
   border-radius: 0;//圆角为0
   // opacity:0.9;
@@ -202,9 +203,16 @@ ul.dropdown-menu {
   color: #fc6c38;
 
   margin-top: -15px;
-
 }
 
+.jumbotron h1.welcome-title {
+  float: left;
+  margin-top: 90px !important;
+  background-color: #f2f2f2;
+  padding: 50px;
+  // opacity: 0.83;
+  font-size: 60px !important;
+}
 .intro a.btn-lg {
   margin-bottom: 60px;
   margin-top: 20px;
