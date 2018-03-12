@@ -1,4 +1,35 @@
-# README
+# JobsInChina
+online demo:
+https://jobsinchina.herokuapp.com/
+
+# About your application's environment
+
+```
+cwy@MPro ⮀ ~/shanghai/job-ds ⮀ ⭠ started± ⮀ rails about
+About your application's environment
+Rails version             5.0.2
+Ruby version              2.4.2-p198 (x86_64-darwin17)
+RubyGems version          2.7.3
+Rack version              2.0.1
+JavaScript Runtime        Node.js (V8)
+...
+Environment               development
+Database adapter          sqlite3
+Database schema version   20170504063011
+```
+
+# Get Started
+```
+git clone git@github.com:cwy007/job-ds.git
+cd job-ds
+cp config/database.yml.example config/database.yml
+bundle install
+rake db:migrate
+rake db:seed
+rails s
+```
+
+http://localhost:3000
 
 # 第一周的进度：admin部分实作
 1.先做jobs部分
