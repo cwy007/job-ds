@@ -6,69 +6,34 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-puts "這個種子檔會自動建立一個admin帳號, 並且創建 30 個 public jobs, 以及39個hidden jobs"
-
-create_account = User.create([email: '101@qq.com',name: "fullStack", password: '123456', password_confirmation: '123456', is_admin: 'true'])
+create_account = User.create([email: 'admin@example.com',name: "admin", password: '123456', password_confirmation: '123456', is_admin: 'true'])
 puts "Admin account created."
 
-["后端开发", "移动开发", "前端开发", "测试", "运维/技术支持", "项目管理"].each do |c|
-  category = Category.create(name: c)
+categories = ["后端开发", "移动开发", "前端开发", "测试", "运维/技术支持", "项目管理"]
+companies  = ["京东", "汽车之家", "腾讯", "华为", "美团", "阿里巴巴"]
+addresses  = ["北京", "上海", "杭州", "深圳", "南京"]
+
+categories.each do |category|
+  category = Category.create(name: category)
 end
 puts "6 categories created."
 
-create_jobs = for i in 1..5 do
+companies.each do |company|
+  10.times do |i|
+    hide = i + 1 > 5 ? true : false
 
-  Job.create!([title: "Job no.#{i}", description: "這是用種子建立的第 #{i} 個Public工作",
-             wage_upper_bound: rand(50..99)*100, wage_lower_bound: rand(10..49)*100,
-             is_hidden: "false", user_id: 1, category_id: 1, job_address: "北京",
-             company_name: "京东", company_image: nil])
-
+    Job.create!(
+                 title: "Job no.#{i + 1}",
+           description: "这是种子档案建立的第 #{i + 1} 个Public工作",
+      wage_upper_bound: rand(10..20)*1000,
+      wage_lower_bound: rand(7..9)*1000,
+             is_hidden: hide,
+               user_id: 1,
+           category_id: Category.all.sample.id,
+           job_address: addresses.sample,
+          company_name: "#{company}",
+         company_image: nil
+    )
+  end
 end
-puts "5 Public jobs created."
-
-create_jobs = for i in 1..5 do
-
-  Job.create!([title: "Job no.#{i+10}", description: "這是用種子建立的第 #{i+10} 個Hidden工作",
-              wage_upper_bound: rand(50..99)*100, wage_lower_bound: rand(10..49)*100,
-              is_hidden: "true", user_id: 1, category_id: 2, job_address: "上海",
-              company_name: "汽车之家", company_image: nil])
-end
-puts "5 Hidden jobs created."
-
-create_jobs = for i in 1..5 do
-
-  Job.create!([title: "Job no.#{i}", description: "這是用種子建立的第 #{i} 個Public工作",
-               wage_upper_bound: rand(50..99)*100, wage_lower_bound: rand(10..49)*100,
-               is_hidden: "false", user_id: 1, category_id: 3, job_address: "广州",
-               company_name: "腾讯", company_image: nil])
-
-end
-puts "5 Public jobs created."
-
-create_jobs = for i in 1..5 do
-
-  Job.create!([title: "Job no.#{i+10}", description: "這是用種子建立的第 #{i+10} 個Hidden工作",
-              wage_upper_bound: rand(50..99)*100, wage_lower_bound: rand(10..49)*100,
-              is_hidden: "true", user_id: 1, category_id: 4, job_address: "深圳",
-              company_name: "华为", company_image: nil])
-end
-puts "5 Hidden jobs created."
-
-create_jobs = for i in 1..5 do
-
-  Job.create!([title: "Job no.#{i}", description: "這是用種子建立的第 #{i} 個Public工作",
-                wage_upper_bound: rand(50..99)*100, wage_lower_bound: rand(10..49)*100,
-                is_hidden: "false", user_id: 1, category_id: 5, job_address: "郑州",
-                company_name: "美团", company_image: nil])
-
-end
-puts "5 Public jobs created."
-
-create_jobs = for i in 1..5 do
-
-  Job.create!([title: "Job no.#{i+10}", description: "這是用種子建立的第 #{i+10} 個Hidden工作",
-              wage_upper_bound: rand(50..99)*100, wage_lower_bound: rand(10..49)*100,
-              is_hidden: "false", user_id: 1, category_id: 6, job_address: "杭州",
-              company_name: "阿里巴巴", company_image: nil])
-end
-puts "5 Hidden jobs created."
+puts "created 5 Public and Hidden jobs for each company."
