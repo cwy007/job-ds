@@ -17,7 +17,7 @@ class Admin::ResumesController < ApplicationController
     @resume.favorite = true
     @resume.save
     flash[:notice] = "收藏成功"
-    redirect_to :back
+    redirect_back(fallback_location: root_path)
   end
 
   def unfavorite
@@ -25,7 +25,7 @@ class Admin::ResumesController < ApplicationController
     @resume.favorite = false
     @resume.save
     flash[:alert] = "你已取消收藏！"
-    redirect_to :back
+    redirect_back(fallback_location: root_path)
   end
 
 end
