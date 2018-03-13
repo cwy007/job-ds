@@ -14,11 +14,11 @@
     <%= image_tag("http://placehold.it/100x100px&text=No Pic") %>
   <% end %>
   <%= f.input :company_image, as: :file %>
-  <% if @job.category.present? %>
-    <%= f.select :category_id, @categories %>
-  <% else %>
-    <%= select_tag(:category_id, options_for_select(@categories), :prompt => "类别") %>
+
+  <%= f.input :category_id do %>
+    <%= f.select :category_id, Category.all.map { |c| [c.name, c.id] }, :prompt => "类别" %>
   <% end %>
+
   <%= f.input :is_hidden, label: "隐藏" %>
   <%= f.submit "提交", class: "btn btn-primary"%>
 <% end %>
